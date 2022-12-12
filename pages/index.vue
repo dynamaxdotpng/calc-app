@@ -52,7 +52,7 @@ export default {
       value1: null,
       value2: null,
       operation: '+',
-      operations: ['+', '-', '×', '÷']
+      operations: ['+', '-', '×', '÷', '^', '%']
     }
   },
   computed: {
@@ -75,6 +75,14 @@ export default {
 
       if (this.operation === '÷') {
         return Number(this.value1) / Number(this.value2)
+      }
+
+      if (this.operation === '^') {
+        return Number(this.value1) ** Number(this.value2)
+      }
+
+      if (this.operation === '%') {
+        return Number(this.value1) % Number(this.value2)
       }
 
       return null
