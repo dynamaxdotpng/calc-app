@@ -4,10 +4,17 @@
       <v-card class="logo py-4 d-flex justify-center">
         Awesome calculator app (test project)
       </v-card>
-      <v-card>
-        <v-card-title class="headline">
-          Let's do some calculations
-        </v-card-title>
+      <template>
+        <v-switch
+        label="Light Mode"
+        inset
+        @change="darkMode()"
+        ></v-switch>
+      </template>
+        <v-card>
+          <v-card-title class="headline">
+            Let's do some calculations
+          </v-card-title>
         <v-card-text>
           <v-text-field
             v-model="value1"
@@ -61,6 +68,11 @@ export default {
       value2: null,
       operation: '+',
       operations: ['+', '-', '×', '÷', '^', '%']
+    }
+  },
+  methods: {
+    darkMode () {
+      this.$vuetify.theme.dark = !this.$vuetify.theme.dark
     }
   },
   computed: {
